@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import AuthButton from "./AuthButton"
+import Launcher from "./Launcher"
 
 export default function App() {
   const [user, setUser] = useState(null)
@@ -8,7 +9,16 @@ export default function App() {
     <div style={styles.app}>
       <header style={styles.header}>
         <h1 style={styles.title}>Fuller OS Dashboard</h1>
-        <p style={styles.subtitle}>PWA Operating System Mission Control</p>
+        {user && (
+          <div style={styles.userBox}>
+            <img
+              src={user.picture}
+              alt="Profile"
+              style={styles.avatar}
+            />
+            <span style={styles.userName}>{user.name}</span>
+          </div>
+        )}
       </header>
 
       {!user && (
@@ -19,17 +29,7 @@ export default function App() {
         </div>
       )}
 
-      {user && (
-        <div className="card" style={styles.card}>
-          <h2>Welcome, {user.name}</h2>
-          <p>Email: {user.email}</p>
-          <img
-            src={user.picture}
-            alt="Profile"
-            style={{ width: 80, borderRadius: "50%", marginTop: "1rem" }}
-          />
-        </div>
-      )}
+      {user && <Launcher />}
     </div>
   )
 }
@@ -45,16 +45,29 @@ const styles = {
   },
   header: {
     textAlign: "center",
-    padding: "1rem 0"
+    padding: "1rem 0",
+    display: "flex",
+    flexDirection: "column",
+    gap: "0.5rem"
   },
   title: {
     fontSize: "2rem",
-    color: "var(--primary-dark)",
-    marginBottom: "0.25rem"
+    color: "var(--primary-dark)"
   },
-  subtitle: {
+  userBox: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "0.5rem"
+  },
+  avatar: {
+    width: 40,
+    height: 40,
+    borderRadius: "50%"
+  },
+  userName: {
     fontSize: "1rem",
-    color: "var(--accent)"
+    fontWeight: "600"
   },
   card: {
     background: "var(--surface)",
