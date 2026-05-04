@@ -1,0 +1,21 @@
+{
+  "name": "Fuller OS Dashboard",
+  "short_name": "FullerOS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2D5016",
+  "description": "The Fuller Family OS Dashboard — mission control for travel, planning, and daily coordination.",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
