@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { initGoogleSignIn, renderGoogleButton } from "./auth"
 
 export default function AuthButton({ onLogin }) {
-  const CLIENT_ID = 555860908271-ko3og8dr5n6v3on16g39idpp43rbentt.apps.googleusercontent.com
+  const CLIENT_ID = "555860908271-ko3og8dr5n6v3on16g39idpp43rbentt.apps.googleusercontent.com"
 
   useEffect(() => {
     // Wait for the Google script to load before initializing
